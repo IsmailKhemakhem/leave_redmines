@@ -1,0 +1,42 @@
+<p><button type="button" class ="btn btn-info" id="sld" >SOLD </button> 
+<input id="sld" name="person" type="text" value="...." disabled/></p> 
+<p><button type="button" class ="btn btn-info" id="lvs" >Leaves  </button>
+<input id="lvs" name="person" type="text" value="...." disabled/></p>
+
+<p><button type="button" class ="btn btn-info" id="pdg" >Pending  </button>
+<input id="pdg" name="person" type="text" disabled value=<%= @luser%> /></p>
+<table class="table" border="1" >
+  <th> User </th>
+  <th> CP </th>
+  <th> TM </th>
+  <th> datb </th>
+  <th> Datf </th>
+  <%
+  @leaves.each do |leaves|
+  %>
+     <tr>
+    <td> <%= leaves['luser'] %> </td> 
+<td> <%= leaves['lcompany'] %> </td>
+ <td> <%= leaves['lteam'] %> </td> <td> <%= leaves['ldateb'] %> 
+</td> <td> <%= leaves['ldatef'] %> </td>
+     </tr>
+  <%
+  end
+   %>
+</table>
+
+<% content_for :sidebar do %>
+    <%= render :partial => 'leave/sidebar' %>
+<% end %>
+
+<form name="dmd" role="form" action="demande">
+<button type="button"  class ="btn btn-info" id="sendReq"  onclick="sendRequest()"> leave request</button>
+
+</form>
+
+<script type="text/javascript">
+function sendRequest() {
+      
+      document.forms["dmd"].submit();      
+   }
+</script>
