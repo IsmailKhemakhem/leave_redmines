@@ -1,12 +1,15 @@
 <p><button type="button" class ="btn btn-info" id="sld" >SOLD </button> 
 <input id="sld" name="person" type="text" value="...." disabled/></p> 
+
 <p><button type="button" class ="btn btn-info" id="lvs" >Leaves  </button>
 <input id="lvs" name="person" type="text" value="...." disabled/></p>
 
 <form name="pdg" role="form" action="pending">
 <button type="button"  class ="btn btn-info" id="sendReq"  onclick="sendRequest2()"> Pending</button>
+
 </form>
-<input id="pdg" name="person" type="text" disabled value=<%= @luser%> /></p>
+<input id="pdg" name="person" type="text" disabled value=<%= @luser%> 
+</br>
 <table class="table" border="1" >
   <tr>   
      <th> Comment </th>
@@ -23,9 +26,7 @@
  <td> <%= leaves['ldatef'] %> </td> 
  <td> <%= leaves['ldecision'] %> </td>
      </tr>
-  <%
-  end
-   %>
+  <% end %>
 </table>
 
 <% content_for :sidebar do %>
@@ -34,7 +35,6 @@
 
 <form name="dmd" role="form" action="demande">
 <button type="button"  class ="btn btn-info" id="sendReq"  onclick="sendRequest()"> leave request</button>
-
 </form>
 
 <script type="text/javascript">
