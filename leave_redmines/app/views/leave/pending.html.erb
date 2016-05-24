@@ -1,0 +1,28 @@
+<table  border="1">
+<tr>
+           <td>firstname </td>
+           <td>lastname </td>
+           <td>leave begin time</td>
+           <td>leave end date </td>
+           <td>Comment </td>
+           <td>Decision </td>
+           
+
+</tr>
+
+<% @leaves.each do |lv|  %>
+    
+        <tr>
+          <td> <%= User.where(id: lv['luser']).pluck('firstname')[0] %> </td>
+          <td> <%= User.where(id: lv['luser']).pluck('lastname')[0] %> </td>
+          <td> <%= lv['ldateb'] %> </td>
+          <td> <%= lv['ldatef'] %> </td>
+          <td> <%= lv['lcomment'] %> </td>
+          <td> <button type="button" class ="btn btn-info" id="Alvs" >accept leave </button><button type="button" class ="btn btn-info" id="Rlvs" >Refuse Leave </button></td>
+
+
+
+        </tr>
+              
+<%end%>
+</table>

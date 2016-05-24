@@ -1,1 +1,20 @@
-<p>hello</p>
+<p>Demande de congé</p>
+<p>Sold 
+<input id="pdg" name="person" type="text" disabled value="" /></p>
+<input type="date" name="calender" id="cldb">
+<%= calendar_for('cldb') %>
+</br>
+<input type="date" name="calender" id="cldf">
+<%= calendar_for('cldf') %>
+</br>
+<div class="form_row">
+    <br><%= radio_button_tag 'type', 'normal', true %>Normal leaves
+    <br><%= radio_button_tag 'type', 'special' %>Special leaves
+</div>
+</br>
+<select name="city_id" id="city_id">
+  <option value="1">Illness</option>
+</select>
+</br>
+
+<button type="button" class ="btn btn-info" id="sendReq" onclick="sendRequest()">Send leave request</button>

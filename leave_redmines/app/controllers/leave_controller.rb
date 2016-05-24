@@ -11,4 +11,8 @@ class LeaveController < ApplicationController
   def demande 
   
   end
+ 
+  def pending
+@leaves= LmsLeave.all
+  end
 end

@@ -3,22 +3,25 @@
 <p><button type="button" class ="btn btn-info" id="lvs" >Leaves  </button>
 <input id="lvs" name="person" type="text" value="...." disabled/></p>
 
-<p><button type="button" class ="btn btn-info" id="pdg" >Pending  </button>
+<form name="pdg" role="form" action="pending">
+<button type="button"  class ="btn btn-info" id="sendReq"  onclick="sendRequest2()"> Pending</button>
+</form>
 <input id="pdg" name="person" type="text" disabled value=<%= @luser%> /></p>
 <table class="table" border="1" >
-  <th> User </th>
-  <th> CP </th>
-  <th> TM </th>
-  <th> datb </th>
-  <th> Datf </th>
+  <tr>   
+     <th> Comment </th>
+     <th> leave begin date </th>
+     <th> leave end date </th>
+     <th> Descition</th>
+  </tr>
   <%
   @leaves.each do |leaves|
   %>
      <tr>
-    <td> <%= leaves['luser'] %> </td> 
-<td> <%= leaves['lcompany'] %> </td>
- <td> <%= leaves['lteam'] %> </td> <td> <%= leaves['ldateb'] %> 
-</td> <td> <%= leaves['ldatef'] %> </td>
+    <td> <%= leaves['lcomment'] %> </td> 
+<td> <%= leaves['ldateb'] %> </td>
+ <td> <%= leaves['ldatef'] %> </td> 
+ <td> <%= leaves['ldecision'] %> </td>
      </tr>
   <%
   end
@@ -35,8 +38,14 @@
 </form>
 
 <script type="text/javascript">
-function sendRequest() {
+function sendRequest() 
+   {
       
       document.forms["dmd"].submit();      
    }
+function sendRequest2() {
+
+      document.forms["pdg"].submit();
+   }
+
 </script>
